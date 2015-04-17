@@ -19,7 +19,8 @@ angular
     'ui.bootstrap',
     'satellizer',
     'config',
-    'toastr'
+    'toastr',
+    'angular-loading-bar'
   ])
     .config(function ($stateProvider, $urlRouterProvider, $authProvider, ENV, toastrConfig) {
 
