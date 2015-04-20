@@ -3,7 +3,9 @@
     <p>You have {{vehicles.length}} vehicles</p>
 
     <ul class="list-group">
-        <li class="list-group-item" ng-repeat="vehicle in vehicles">{{vehicle.year | date:'yyyy'}} {{vehicle.make}}
+        <li class="list-group-item" ng-repeat="vehicle in vehicles">
+            <a ui-sref="vehicle({id:vehicle.id})">{{vehicle.year | date:'yyyy'}} {{vehicle.make}}</a>
+
             <button type="button" class="btn btn-danger btn-xs" ng-click="deleteVehicle(vehicle)">Delete</button>
         </li>
 

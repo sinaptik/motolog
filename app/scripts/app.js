@@ -48,6 +48,10 @@ angular
             url: '/dashboard',
             templateUrl: 'views/dashboard.html',
             controller: 'DashboardCtrl'
+        }).state('vehicle', {
+            url: '/vehicle?id',
+            templateUrl: 'views/vehicle.html',
+            controller: 'VehicleCtrl'
         });
 
         $urlRouterProvider.otherwise('/');

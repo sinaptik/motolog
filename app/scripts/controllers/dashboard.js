@@ -21,12 +21,11 @@ angular.module('motologApp')
                 make: $scope.make,
                 year: new Date($scope.year, 1, 1)
             }).then(function () {
-                console.log('Vehicle added');
+                toastr.success('Vehicle added');
                 getMyVehicles();
             });
 
-            toastr.success('Vehicle added');
-
+            // Clear input fields
             $scope.make = '';
             $scope.year = '';
             $scope.addVehicleFrm.$setPristine();
@@ -35,8 +34,6 @@ angular.module('motologApp')
 
         function deleteVehicle(vehicle) {
             $http.post(ENV.apiEndpoint + 'vehicle/destroy/' + vehicle.id).then(function () {
-                console.log('Vehicle deleted');
-
                 getMyVehicles();
             });
         }
