@@ -21,5 +21,10 @@ angular.module('motologApp')
             });
         }
 
+        function addFuelUp() {
+            toastr.info('This feature does not work yet!');
+        }
+
         $scope.id = id;
+        $scope.addFuelUp = addFuelUp;
     });
