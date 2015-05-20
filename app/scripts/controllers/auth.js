@@ -19,6 +19,9 @@ angular.module('motologApp')
 
         if ($scope.isAuthenticated()) {
             loadCurrentUser();
+        } else {
+            //remove expired token
+            $auth.removeToken()
         }
 
         function logout() {
