@@ -21,7 +21,7 @@ angular.module('motologApp')
             loadCurrentUser();
         } else {
             //remove expired token
-            $auth.removeToken()
+            $auth.removeToken();
         }
 
         function logout() {

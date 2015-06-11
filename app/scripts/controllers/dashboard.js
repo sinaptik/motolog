@@ -21,15 +21,15 @@ angular.module('motologApp')
                 make: $scope.make,
                 year: new Date($scope.year, 1, 1)
             }).then(function () {
+                // Clear input fields
+                $scope.make = '';
+                $scope.year = '';
+                $scope.addVehicleFrm.$setPristine();
+                $scope.addVehicleFrm.$setUntouched();
+
                 toastr.success('Vehicle added');
                 getMyVehicles();
             });
-
-            // Clear input fields
-            $scope.make = '';
-            $scope.year = '';
-            $scope.addVehicleFrm.$setPristine();
-            $scope.addVehicleFrm.$setUntouched();
         }
 
         function deleteVehicle(vehicle) {

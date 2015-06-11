@@ -49,7 +49,7 @@ angular
             templateUrl: 'views/dashboard.html',
             controller: 'DashboardCtrl'
         }).state('vehicle', {
-            url: '/vehicle?id',
+            url: '/vehicle/{id}',
             templateUrl: 'views/vehicle.html',
             controller: 'VehicleCtrl'
         });
