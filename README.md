@@ -9,6 +9,8 @@ Run `grunt` for building and `grunt serve` for preview.
 
 Run `sails generate api <apiName>` to generate scaffolding for a new API
 
+Run `yo angular:route myroute` to generate controller and view, and configure route. Make sure to fix the route for angular-ui-router
+
 ## Testing
 
 Running `grunt test` will run the unit tests with karma.
