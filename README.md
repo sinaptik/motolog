@@ -6,6 +6,7 @@ version 0.11.1.
 ## Build & development
 
 Run `grunt` for building and `grunt serve` for preview.
+
 Run `sails generate api <apiName>` to generate scaffolding for a new API
 
 ## Testing
