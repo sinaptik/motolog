@@ -3,15 +3,17 @@
 This project is generated with [yo angular generator](https://github.com/yeoman/generator-angular)
 version 0.11.1.
 
-## Build & development
+## Build
 
 Run `grunt` for building and `grunt serve` for preview.
+
+Run `grunt build` to generate `dist` folder which is used in production
+
+## Development
 
 Run `sails generate api <apiName>` to generate scaffolding for a new API
 
 Run `yo angular:route myroute` to generate controller and view, and configure route. Make sure to fix the route for angular-ui-router
-
-Run `grunt build` to generate `dist` folder which is used in production
 
 ## Testing
 
