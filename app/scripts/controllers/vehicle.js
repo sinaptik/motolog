@@ -49,6 +49,19 @@ angular.module('motologApp')
             });
         }
 
+        function addOilChange() {
+            $http.post(ENV.apiEndpoint + 'maintenance/addMaintenance', {
+                type: 'oilchange',
+                vehicle: $scope.vehicle
+            }).then(function () {
+                toastr.success('Oil change logged');
+            }, function (reason) {
+                toastr.error('Error logging oil change');
+                console.log(reason);
+            });
+        }
+
         $scope.id = id;
         $scope.addFuelUp = addFuelUp;
+        $scope.addOilChange = addOilChange;
     });

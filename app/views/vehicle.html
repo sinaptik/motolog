@@ -1,6 +1,12 @@
 <h1>{{vehicle.year | date:'yyyy'}} {{vehicle.make}}</h1>
 
 <div class="col-sm-8 col-md-6 col-md-offset-3 col-sm-offset-2">
+    <h3>Due events</h3>
+    <p>You have no events due</p>
+    <p>Next warrant of fitness due on ...</p>
+</div>
+
+<div class="col-sm-8 col-md-6 col-md-offset-3 col-sm-offset-2">
     <h3>Add fuel up</h3>
 
     <form name="addFuelUpFrm">
@@ -18,8 +24,16 @@
 </div>
 
 <div class="col-sm-8 col-md-6 col-md-offset-3 col-sm-offset-2">
-
     <h3>Add oil change</h3>
+
+    <form name="addFuelUpFrm">
+    </form>
+    <button type="button" class="btn btn-primary" ng-click="addOilChange()">Add oil change</button>
+
+    <p>Your last oil change was x days ago on dd/mm/yy</p>
+</div>
+
+<div class="col-sm-8 col-md-6 col-md-offset-3 col-sm-offset-2">
 
     <h3>Add warrant of fitness</h3>
 

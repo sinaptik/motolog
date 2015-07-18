@@ -52,6 +52,10 @@ angular
             url: '/vehicle/{id}',
             templateUrl: 'views/vehicle.html',
             controller: 'VehicleCtrl'
+        }).state('maintainence', {
+            url: '/maintainence/{id}',
+            templateUrl: 'views/maintainence.html',
+            controller: 'MaintainenceCtrl'
         });
 
         $urlRouterProvider.otherwise('/');
