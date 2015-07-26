@@ -11,19 +11,31 @@ angular.module('motologApp')
     .controller('VehicleCtrl', function ($scope, $state, $stateParams, $http, toastr, ENV) {
         var id = $stateParams.id;
 
-        // Load up the vehicle
-        if (id) {
-            $http.get(ENV.apiEndpoint + 'vehicle/' + id).then(function (vehicle) {
-                $scope.vehicle = vehicle.data;
+        function init() {
+            loadVehicle(id);
+            loadOilChanges(id);
+        }
+
+        function loadVehicle(carId) {
+            if (carId) {
+                $http.get(ENV.apiEndpoint + 'vehicle/' + carId).then(function (vehicle) {
+                    $scope.vehicle = vehicle.data;
+                }, function (reason) {
+                    console.log(reason);
+
+                    $state.go('dashboard');
+                });
+            } else {
+                $state.go('dashboard'); //no vehicle supplied
+            }
+        }
+
+        function loadOilChanges(carId) {
+            $http.get(ENV.apiEndpoint + 'maintenance/getOilChanges?vehicle=' + carId).then(function (result) {
+                $scope.oilChanges = result.data;
             }, function (reason) {
-                toastr.error('Could not find vehicle');
-
                 console.log(reason);
-
-                $state.go('dashboard');
             });
-        } else {
-            $state.go('dashboard'); //no vehicle supplied
         }
 
         function addFuelUp() {
@@ -55,11 +67,14 @@ angular.module('motologApp')
                 vehicle: $scope.vehicle
             }).then(function () {
                 toastr.success('Oil change logged');
+                loadOilChanges(id);
             }, function (reason) {
                 toastr.error('Error logging oil change');
                 console.log(reason);
             });
         }
+
+        init();
 
         $scope.id = id;
         $scope.addFuelUp = addFuelUp;
